@@ -25,7 +25,7 @@ class Car(models.Model):
 
 
 class Driver(AbstractUser):
-    license_number = models.CharField(max_length=255)
+    license_number = models.CharField(max_length=255, unique=True)
     car = models.ForeignKey(
         Car,
         on_delete=models.SET_NULL,
